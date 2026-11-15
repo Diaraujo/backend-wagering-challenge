@@ -1,0 +1,44 @@
+{
+  "name": "backend-challenge",
+  "version": "1.0.0",
+  "description": "Distributed Wagering Processor - Jungle Gaming Challenge",
+  "author": "Diogo de Araujo",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "start": "bun run src/main.ts",
+    "start:dev": "bun --watch run src/main.ts",
+    "start:prod": "bun run dist/main.js",
+    "migration:up": "bun --bun mikro-orm migration:up --config=./mikro-orm.config.ts",
+    "migration:down": "bun --bun mikro-orm migration:down --config=./mikro-orm.config.ts",
+    "migration:create": "bun --bun mikro-orm migration:create --config=./mikro-orm.config.ts",
+    "test": "bun test",
+    "test:unit": "bun test test/unit",
+    "test:concurrency": "bun test test/concurrency"
+  },
+  "dependencies": {
+    "@aws-sdk/client-sqs": "^3.600.0",
+    "@mikro-orm/core": "6.6.18",
+    "@mikro-orm/migrations": "6.6.18",
+    "@mikro-orm/nestjs": "^6.0.2",
+    "@mikro-orm/postgresql": "6.6.18",
+    "@nestjs/common": "^10.3.0",
+    "@nestjs/core": "^10.3.0",
+    "@nestjs/platform-express": "^10.3.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "decimal.js": "^10.4.3",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "6.6.18",
+    "@mikro-orm/reflection": "6.6.18",
+    "@nestjs/cli": "^10.3.0",
+    "@nestjs/testing": "^10.3.0",
+    "@types/bun": "latest",
+    "@types/express": "^4.17.21",
+    "typescript": "^5.4.0"
+  }
+}
